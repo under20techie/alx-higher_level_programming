@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 # compiles a Python script file saved in the  file
-python3 -m compileall -b "$PYFILE"
+python3 -m py_compile "$PYFILE"
