@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # compiles a Python script file saved in the  file
 python3 -m py_compile "$PYFILE"
 mv __pycache__/*  main.pyc
