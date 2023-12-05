@@ -18,7 +18,7 @@ int is_palindrome(listint_t **head)
 		n++;
 	}
 	current = *head;
-	while (current && i < ((n / 2) + 1))
+	while (current && i < ((n / 2)))
 	{
 		current  = current->next;
 		i++;
