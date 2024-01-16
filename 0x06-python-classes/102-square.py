@@ -29,7 +29,7 @@ class Square:
         return self.__size ** 2
 
     def __eq__(self, other):
-        """Equal """ 
+        """Equal """
         return self.__size == other
 
     def __ne__(self, other):
