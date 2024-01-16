@@ -48,11 +48,11 @@ class Square:
     def my_print(self):
         ''' Prints the square '''
 
-        for i in range(self.__position[1]):
-            print()
-        for j in range(self.__size):
-            print(' ' * self.__position[0], end='')
-            print('#' * self.__size)
-
         if self.__size == 0:
             print()
+        else:
+            for i in range(self.__position[1]):
+                print()
+            for j in range(self.__size):
+                print(' ' * self.__position[0], end='')
+                print('#' * self.__size)
