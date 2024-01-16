@@ -62,7 +62,7 @@ class Square:
 
         rep = ''
         if self.__size == 0:
-            return '\n'
+            return ''
         else:
             for i in range(self.__position[1]):
                 rep += '\n'
