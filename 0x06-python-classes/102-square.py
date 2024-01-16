@@ -50,4 +50,4 @@ class Square:
 
     def __lt__(self, other):
         """Less than or equal to """
-        return self.__size <= other
+        return self.__size < other
