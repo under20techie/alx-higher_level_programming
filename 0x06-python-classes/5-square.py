@@ -28,6 +28,7 @@ class Square:
         """Area Method"""
 
         return self.__size ** 2
+
     def my_print(self):
         ''' Prints the square '''
 
