@@ -13,7 +13,7 @@ def text_indentation(text):
         if c in ".?:" and flag == 0:
             print("{}\n".format(c))
             flag = 1
-        elif flag:
+        elif flag == 1 and c == ' ':
             flag = 0
             continue
         else:
