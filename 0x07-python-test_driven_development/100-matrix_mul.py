@@ -43,10 +43,10 @@ def matrix_mul(m_a, m_b):
     new_matrix = []
     for row in m_a:
         column_matrix = []
-        for i in range(len(m_a[0])):
+        for j in range(len(m_b)):
             col = 0
-            for j in range(len(m_b)):
-                col += row[j] * m_b[j][i]
+            for i in range(len(m_a[0])):
+                col += row[i] * m_b[i][j]
             column_matrix.append(col)
         new_matrix.append(column_matrix)
     return new_matrix
