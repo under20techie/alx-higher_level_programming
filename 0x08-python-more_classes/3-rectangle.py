@@ -52,5 +52,7 @@ class Rectangle:
         """Str"""
         if self.__width == 0 or self.__height == 0:
             return ""
+        rep = ""
         for i in range(self.__height):
-            print('#' * self.__width)
+            rep += '#' * self.__width + '\n'
+        return rep[:-1]
