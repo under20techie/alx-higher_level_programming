@@ -60,6 +60,7 @@ class Rectangle:
     def __repr__(self):
         """Repr"""
         return f"Rectangle({self.__width}, {self.__height})"
+
     def __del__(self):
         """"Del"""
         del self
