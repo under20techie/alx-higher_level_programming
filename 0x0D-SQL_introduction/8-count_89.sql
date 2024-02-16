@@ -1,3 +1,3 @@
 -- Selects records 
 SELECT * FROM first_table
-WHERE id=89;
+WHERE id = 89;
