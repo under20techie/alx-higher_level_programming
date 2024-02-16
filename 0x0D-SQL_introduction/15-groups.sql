@@ -1,3 +1,4 @@
 -- select like numbers
 SELECT score, COUNT(score) AS numbers
-WHERE LIKE '%';
+WHERE LIKE '%'
+ORDER BY score DESC;
