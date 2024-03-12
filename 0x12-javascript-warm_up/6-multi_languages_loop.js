@@ -1,2 +1,7 @@
 #!/usr/bin/node
-console.log(['C is fun', 'Python is cool', 'JavaScript is amazing'].join('\n'));
+let i = 0;
+const arr = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
+while (i < arr.length) {
+  console.log(arr[i]);
+  i++;
+}
