@@ -1,3 +1,4 @@
+#!/usr/bin/node
 exports.esrever = function (list) {
   const newList = [];
   let j = list.length - 1;
