@@ -1,6 +1,9 @@
 #!/usr/bin/node
 exports.converter = function (base) {
   return function myConverter (num) {
+    if (num === 0 && base === 10) {
+      return ('0');
+    }
     if (num < 1) {
       return ('');
     }
