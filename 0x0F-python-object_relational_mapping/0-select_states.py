@@ -2,6 +2,8 @@
 import MySQLdb
 import sys
 '''Connects to the table states using mysqldb api'''
+
+
 username, password, database = sys.argv[1:]
 
 def access_states():
