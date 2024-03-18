@@ -1,0 +1,23 @@
+#!/usr/bin/python3
+"""Connects to the table states using mysqldb api"""
+import MySQLdb
+import sys
+
+
+def access_cities():
+    '''Acess_cities func'''
+
+    username, password, database = sys.argv[1:]
+    conn = MySQLdb.connect(host='localhost', port=3306, user=username, passwd=password, db=database)
+
+    cur = conn.cursor()
+    cur.execute('SELECT cities.id, states.name, cities.name FROM cities INNER JOIN states ON states.id=cities.state_id ORDER BY id ASC')
+    result = cur.fetchall()
+
+    for row in result:
+        print(row)
+
+    cur.close()
+    conn.close()
+if __name__ == '__main__':
+    access_cities()
