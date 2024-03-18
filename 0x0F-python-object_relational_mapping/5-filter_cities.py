@@ -8,10 +8,18 @@ def access_cities():
     '''Acess_cities func'''
 
     username, password, database, state_name = sys.argv[1:]
-    conn = MySQLdb.connect(host='localhost', port=3306, user=username, passwd=password, db=database)
+    conn = MySQLdb.connect(
+            host='localhost',
+            port=3306,
+            user=username,
+            passwd=password,
+            db=database
+        )
 
     cur = conn.cursor()
-    sql_query = 'SELECT name FROM cities WHERE state_id=(SELECT id FROM states WHERE name=%s) ORDER BY id ASC'
+    sql_query = 'SELECT name FROM cities'
+    'WHERE state_id=(SELECT id FROM states WHERE name=%s)'
+    'ORDER BY id ASC'
     cur.execute(sql_query, (state_name,))
     result = cur.fetchall()
 
@@ -20,5 +28,7 @@ def access_cities():
 
     cur.close()
     conn.close()
+
+
 if __name__ == '__main__':
     access_cities()
