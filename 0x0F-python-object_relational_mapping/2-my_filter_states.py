@@ -15,8 +15,7 @@ def search_name():
 
     cur = conn.cursor()
     sql_query = "SELECT * FROM states WHERE name='{}'"
-    "ORDER BY id"
-    .format(state_name)
+    "ORDER BY id".format(state_name)
 
     cur.execute(sql_query)
     result = cur.fetchall()
