@@ -7,6 +7,8 @@ import sys
 username, password, database = sys.argv[1:]
 
 def access_states():
+    '''Acess_states func'''
+
     conn = MySQLdb.connect(host='localhost', port=3306, user=username, passwd=password, db=database)
 
     cur = conn.cursor()
