@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """Connects to the table states using mysqldb api"""
+
+
 import MySQLdb
 import sys
 
