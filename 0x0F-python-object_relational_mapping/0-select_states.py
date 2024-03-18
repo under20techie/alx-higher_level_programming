@@ -1,7 +1,7 @@
 #!/usr/bin/python3
+"""Connects to the table states using mysqldb api"""
 import MySQLdb
 import sys
-'''Connects to the table states using mysqldb api'''
 
 
 username, password, database = sys.argv[1:]
