@@ -16,7 +16,7 @@ def search_name():
     cur = conn.cursor()
     sql_query = (
             "SELECT * FROM states "
-            "WHERE name='{}' "
+            "WHERE BINARY name='{}' "
             "ORDER BY id"
         ).format(state_name)
 
