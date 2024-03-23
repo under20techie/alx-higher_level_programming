@@ -14,7 +14,7 @@ def search_name():
         )
 
     cur = conn.cursor()
-    sql_query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id"
+    sql_query = "SELECT * FROM states WHERE BINARY name LIKE 'N%' ORDER BY id"
     cur.execute(sql_query)
     result = cur.fetchall()
 
