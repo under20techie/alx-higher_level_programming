@@ -17,9 +17,9 @@ def access_cities():
         )
 
     cur = conn.cursor()
-    sql_query = 'SELECT name FROM cities '
-    'WHERE state_id=(SELECT id FROM states WHERE name=%s) '
-    'ORDER BY id ASC'
+    sql_query = ('SELECT name FROM cities'
+    'WHERE state_id=(SELECT id FROM states WHERE name=%s)'
+    'ORDER BY id ASC')
     cur.execute(sql_query, (state_name,))
     result = cur.fetchall()
 
