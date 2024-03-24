@@ -14,7 +14,7 @@ def access_cities():
             user=username,
             passwd=password,
             db=database
-    )
+        )
 
     cur = conn.cursor()
     sql_query = ('SELECT name FROM cities '
