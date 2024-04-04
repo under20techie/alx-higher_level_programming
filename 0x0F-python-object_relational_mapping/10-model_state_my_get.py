@@ -1,5 +1,5 @@
-    #!/usr/bin/python3
-    """
+#!/usr/bin/python3
+"""
 Script that lists only the first State objects from the database hbtn_0e_6_usa
 
  """
@@ -9,10 +9,10 @@ from sqlalchemy import (create_engine)
 from model_state import Base, State
 
 
-def state_fetch_filter():
+def fetch_state():
     """Func where we fetch states from database """
 
-    username, passwd, db = sys.argv[1:]
+    username, passwd, db, state_name = sys.argv[1:]
 
     # create connect to database
     engine = create_engine(
@@ -26,19 +26,21 @@ def state_fetch_filter():
     session = Session()
 
     # Create query to database
-    result = (
+    state = (
             session.query(State)
             .order_by(State.id).
-            filter(State.name.like('%a%'))
+            filter(State.name == state_name).first()
         )
 
     # Print result
-    for state in result:
-        print(f"{state.id}: {state.name}")
+    if state is None:
+        print('Not found')
+    else:
+        print(f"{state.id}")
 
     # close session
     session.close()
 
 
 if __name__ == '__main__':
-    state_fetch_filter()
+    fetch_state()
