@@ -29,7 +29,7 @@ def fetch_update():
     result = (
             session.query(State)
             .filter_by(id=2)
-            .update({"name": "Mexico"})
+            .update({"name": "New Mexico"})
         )
 
     # close session
