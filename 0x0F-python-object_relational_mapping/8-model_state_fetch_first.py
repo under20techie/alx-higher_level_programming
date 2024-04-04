@@ -30,7 +30,7 @@ def state_fetch_first():
 
     # Print result
     if state is None:
-        print()
+        print("Nothing")
     else:
         print(f"{state.id}: {state.name}")
 
