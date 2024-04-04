@@ -6,7 +6,7 @@ Script that lists all State objects from the database hbtn_0e_6_usa
 import sys
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import (create_engine)
-from model_state import Base, State 
+from model_state import Base, State
 
 
 def state_fetch_all():
@@ -15,7 +15,10 @@ def state_fetch_all():
     username, passwd, db = sys.argv[1:]
 
     # create connect to database
-    engine = create_engine(f'mysql+mysqldb://{username}:{passwd}@localhost/{db}', pool_pre_ping=True)
+    engine = create_engine(
+            f'mysql+mysqldb://{username}:{passwd}@localhost/{db}',
+            pool_pre_ping=True
+        )
     Base.metadata.create_all(engine)
 
     # create session for transaction
