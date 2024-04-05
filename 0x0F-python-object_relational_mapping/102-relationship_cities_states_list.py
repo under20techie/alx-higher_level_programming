@@ -36,8 +36,8 @@ def state_city_fetch():
 
     # Print result
     for state in result:
-         for city in state.cities:
-             print(f"{city.id}: {city.name} -> {state.name}")
+        for city in state.cities:
+            print(f"{city.id}: {city.name} -> {state.name}")
 
     # close session
     session.commit()
