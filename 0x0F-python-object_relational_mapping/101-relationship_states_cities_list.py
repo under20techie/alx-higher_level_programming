@@ -29,7 +29,7 @@ def state_city_fetch():
     # Create query to database
     result = (
             session.query(State)
-            .join(City)
+            .outerjoin(City)
             .order_by(State.id, City.id)
             .all()
         )
