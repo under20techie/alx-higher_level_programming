@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Create user class to map to real table"""
 from sqlalchemy.orm import relationship
 from sqlalchemy import Column, String, Integer, ForeignKey
