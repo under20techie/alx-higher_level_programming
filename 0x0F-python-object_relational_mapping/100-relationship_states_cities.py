@@ -6,10 +6,11 @@ Script that lists only the first State objects from the database hbtn_0e_6_usa
 import sys
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import (create_engine)
-from model_state import Base, State
+from relationship_state import Base, State
+from relationship_city import City
 
 
-def state_fetch_filter():
+def fetch_state():
     """Func where we fetch states from database """
 
     username, passwd, db = sys.argv[1:]
@@ -25,20 +26,15 @@ def state_fetch_filter():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # Create query to database
-    result = (
-            session.query(State)
-            .order_by(State.id).
-            filter(State.name.like('%a%'))
-        )
+    # Add new entries to session
+    state = State(name="California")
+    city = City(name="San Francisco", state=state)
+    session.add_all([state, city])
 
-    # Print result
-    for state in result:
-        print(f"{state.id}: {state.name}")
-
-    # close session
+    # commit and close session
+    session.commit()
     session.close()
 
 
 if __name__ == '__main__':
-    state_fetch_filter()
+    fetch_state()
