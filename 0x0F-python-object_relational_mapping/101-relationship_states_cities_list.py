@@ -31,6 +31,7 @@ def state_city_fetch():
             session.query(State)
             .join(City)
             .order_by(State.id, City.id)
+            .all()
         )
 
     # Print result
